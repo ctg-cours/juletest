@@ -3,92 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMGB - Vente en ligne</title>
+    <title>Calcul d'Intérêts</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">AMGB</div>
-            <ul>
-                <li><a href="#scolaire">Scolaire</a></li>
-                <li><a href="#bureautique">Bureautique</a></li>
-                <li><a href="#cosmetiques">Cosmétiques</a></li>
-                <li><a href="#alimentaire">Alimentaire</a></li>
-            </ul>
-        </nav>
+        <div class="logo">Calcul d'Intérêts</div>
     </header>
 
     <main>
-        <section id="scolaire">
-            <h2>Scolaire</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Cahier" alt="Cahier">
-                    <h3>Cahier A4</h3>
-                    <p class="price">2.50€</p>
+        <section id="input-section">
+            <h2>Informations pour le calcul</h2>
+            <form id="interest-form">
+                <div class="form-group">
+                    <label for="doc-type">Type de document</label>
+                    <input type="text" id="doc-type" value="Ordonnance exécutoire">
                 </div>
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Stylo" alt="Stylo">
-                    <h3>Stylo à bille (Noir)</h3>
-                    <p class="price">1.00€</p>
+                <div class="form-group">
+                    <label for="doc-num">N° document</label>
+                    <input type="text" id="doc-num" value="369/04">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="doc-date">Date document</label>
+                    <input type="date" id="doc-date" value="2004-08-27">
+                </div>
+                <div class="form-group">
+                    <label for="principal">Principal HTVA (FCFA)</label>
+                    <input type="number" id="principal" value="11451793">
+                </div>
+                <div class="form-group">
+                    <label for="contractor">Contractant</label>
+                    <input type="text" id="contractor" value="LAMINE NARRO, MOUSTAPHA TAÏB ET MOUSSA">
+                </div>
+                <div class="form-group">
+                    <label for="debt-date">Date de la dette</label>
+                    <input type="date" id="debt-date" value="2019-01-01">
+                </div>
+                <button type="submit">Calculer</button>
+            </form>
         </section>
 
-        <section id="bureautique">
-            <h2>Bureautique</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Ramette" alt="Ramette de papier">
-                    <h3>Ramette de papier A4</h3>
-                    <p class="price">5.00€</p>
-                </div>
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Agrafeuse" alt="Agrafeuse">
-                    <h3>Agrafeuse</h3>
-                    <p class="price">7.50€</p>
-                </div>
+        <section id="result-section">
+            <h2>Résultat du Calcul</h2>
+            <div id="result-output">
+                <!-- Les résultats du calcul seront affichés ici -->
             </div>
-        </section>
-
-        <section id="cosmetiques">
-            <h2>Cosmétiques</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Crème" alt="Crème hydratante">
-                    <h3>Crème hydratante</h3>
-                    <p class="price">12.00€</p>
-                </div>
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Shampoing" alt="Shampoing">
-                    <h3>Shampoing doux</h3>
-                    <p class="price">8.00€</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="alimentaire">
-            <h2>Alimentaire</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Pâtes" alt="Pâtes">
-                    <h3>Pâtes (500g)</h3>
-                    <p class="price">1.50€</p>
-                </div>
-                <div class="product-item">
-                    <img src="https://placehold.co/300x200/2b2b2b/ffffff?text=Huile" alt="Huile d'olive">
-                    <h3>Huile d'olive (1L)</h3>
-                    <p class="price">9.00€</p>
-                </div>
-            </div>
+            <button id="export-pdf" style="display: none;">Exporter en PDF</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 AMGB. Tous droits réservés.</p>
+        <p>&copy; 2024 Application de Calcul d'Intérêts. Tous droits réservés.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
